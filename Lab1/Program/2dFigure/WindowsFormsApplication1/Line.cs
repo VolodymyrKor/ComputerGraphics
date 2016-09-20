@@ -30,7 +30,7 @@ namespace WindowsFormsApplication1
             {
                 if ((X2 == X1) && (Y1 != Y2))
                     return 0;
-                return (Y2 - Y1) / (X2 - X1);
+                return ((double)(Y2 - Y1)) / ((double)(X2 - X1));
             }
         }
 
