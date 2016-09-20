@@ -1,0 +1,9 @@
+E:\Sciense\_STUDY\Третій курс\КГ(Комп'ютерна графіка)\Lab1\Program\2dFigure\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
+E:\Sciense\_STUDY\Третій курс\КГ(Комп'ютерна графіка)\Lab1\Program\2dFigure\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+E:\Sciense\_STUDY\Третій курс\КГ(Комп'ютерна графіка)\Lab1\Program\2dFigure\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+E:\Sciense\_STUDY\Третій курс\КГ(Комп'ютерна графіка)\Lab1\Program\2dFigure\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csprojResolveAssemblyReference.cache
+E:\Sciense\_STUDY\Третій курс\КГ(Комп'ютерна графіка)\Lab1\Program\2dFigure\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+E:\Sciense\_STUDY\Третій курс\КГ(Комп'ютерна графіка)\Lab1\Program\2dFigure\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
+E:\Sciense\_STUDY\Третій курс\КГ(Комп'ютерна графіка)\Lab1\Program\2dFigure\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
+E:\Sciense\_STUDY\Третій курс\КГ(Комп'ютерна графіка)\Lab1\Program\2dFigure\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
+E:\Sciense\_STUDY\Третій курс\КГ(Комп'ютерна графіка)\Lab1\Program\2dFigure\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Main.resources
