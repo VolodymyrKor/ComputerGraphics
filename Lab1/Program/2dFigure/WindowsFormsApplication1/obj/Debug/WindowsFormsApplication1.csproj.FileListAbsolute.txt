@@ -7,3 +7,4 @@ E:\Sciense\_STUDY\Третій курс\КГ(Комп'ютерна графік�
 E:\Sciense\_STUDY\Третій курс\КГ(Комп'ютерна графіка)\Lab1\Program\2dFigure\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
 E:\Sciense\_STUDY\Третій курс\КГ(Комп'ютерна графіка)\Lab1\Program\2dFigure\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
 E:\Sciense\_STUDY\Третій курс\КГ(Комп'ютерна графіка)\Lab1\Program\2dFigure\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Main.resources
+E:\Sciense\_STUDY\Третій курс\КГ(Комп'ютерна графіка)\Lab1\Program\2dFigure\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.AboutBox.resources

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.Reflection;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -12,6 +13,7 @@ namespace WindowsFormsApplication1
         public static Graphics Gr;
         public static PictureBox Picture;
         public static int ParallelogramCounter = 0;
+        public static int ZoomIndex = 5;
         public static List<Parallelogram> Parallelograms = new List<Parallelogram>();
 
         public Main()
@@ -54,6 +56,11 @@ namespace WindowsFormsApplication1
 
                     var myPen = new Pen(Brushes.BlueViolet, 2);
 
+                    SolidBrush myBrush = new SolidBrush(RandomColor);
+                    FillMode newFillMode = FillMode.Winding;
+                    Point[] vertexes = {p.VertexA, p.VertexB, p.VertexC, p.VertexD};
+                    Gr.FillPolygon(myBrush, vertexes, newFillMode);
+
                     Gr.DrawLine(myPen,
                         new Point(300 + 4 * int.Parse(A_X_TextBox.Text), 220 - 4 * int.Parse(A_Y_TextBox.Text)),
                         new Point(300 + 4 * int.Parse(B_X_TextBox.Text), 220 - 4 * int.Parse(B_Y_TextBox.Text)));
@@ -85,17 +92,21 @@ namespace WindowsFormsApplication1
 
         private void ChooseColorBtn_Click(object sender, EventArgs e)
         {
-            if (colorDialog1 != null && colorDialog1.ShowDialog() == DialogResult.OK)
+            if (colorDialog1 != null && colorDialog1.ShowDialog() == DialogResult.OK && ParallelogramCounter > 0)
             {
                 Color? color = colorDialog1.Color;
                 var myPen = new Pen(color.Value, 2);
                 Parallelograms[ParallelogramCounter - 1].DiagonalColor = color.Value;
                 Gr.DrawLine(myPen,
-                    new Point(300 + 4 * int.Parse(A_X_TextBox.Text), 220 - 4 * int.Parse(A_Y_TextBox.Text)),
-                    new Point(300 + 4 * int.Parse(C_X_TextBox.Text), 220 - 4 * int.Parse(C_Y_TextBox.Text)));
+                    new Point(300 + 4*int.Parse(A_X_TextBox.Text), 220 - 4*int.Parse(A_Y_TextBox.Text)),
+                    new Point(300 + 4*int.Parse(C_X_TextBox.Text), 220 - 4*int.Parse(C_Y_TextBox.Text)));
                 Gr.DrawLine(myPen,
-                    new Point(300 + 4 * int.Parse(B_X_TextBox.Text), 220 - 4 * int.Parse(B_Y_TextBox.Text)),
-                    new Point(300 + 4 * int.Parse(D_X_TextBox.Text), 220 - 4 * int.Parse(D_Y_TextBox.Text)));
+                    new Point(300 + 4*int.Parse(B_X_TextBox.Text), 220 - 4*int.Parse(B_Y_TextBox.Text)),
+                    new Point(300 + 4*int.Parse(D_X_TextBox.Text), 220 - 4*int.Parse(D_Y_TextBox.Text)));
+            }
+            else
+            {
+                MessageBox.Show(@"Некоректний вибір!", @"Помилка!");
             }
         }
 
@@ -109,9 +120,9 @@ namespace WindowsFormsApplication1
 
         private void Coordinates_Enter(object sender, EventArgs e)
         {
-            Picture = new PictureBox() { Name = "helpPicture", Location = new Point(13, 220), Size = new Size(272, 186) };
+            Picture = new PictureBox() { Name = "helpPicture", Location = new Point(13, 220), Size = new Size(200, 137) };
             Controls.Add(Picture);
-            Picture.Load("../../download.png");
+            Picture.Load("../../1.jpg");
         }
 
         private void Coordinates_Leave(object sender, EventArgs e)
@@ -128,8 +139,8 @@ namespace WindowsFormsApplication1
 
             var w = DrawPanel.Width;
             var h = DrawPanel.Height;
-            var widthLines = 20;
-            var heightLines = 20;
+            var widthLines = ZoomIndex*4;
+            var heightLines = ZoomIndex*4;
             Pen myPen = new Pen(Brushes.Black, 1);
 
             for (int i = 0; i < w; i += widthLines)
@@ -154,9 +165,10 @@ namespace WindowsFormsApplication1
             DrawCoordinates();
         }
 
-        private void проПрограмуToolStripMenuItem_Click(object sender, EventArgs e)
+        private void AboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            var aboutForm2 = new AboutBox();
+            aboutForm2.Show();
         }
 
         private void ExitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -164,5 +176,29 @@ namespace WindowsFormsApplication1
             Close();
         }
 
+        private void DrawPanel_Scroll(object sender, ScrollEventArgs e)
+        {
+            //Close();
+        }
+
+        private static Color RandomColor
+        {
+            get
+            {
+                Random random = new Random();
+                return Color.FromArgb(random.Next(0, 255), random.Next(0, 255), random.Next(0, 255));
+
+                //Brush color = Brushes.Transparent;
+                //Random rnd = new Random();
+
+                //Type brushesType = typeof(Brushes);
+
+                //PropertyInfo[] properties = brushesType.GetProperties();
+
+                //int random = rnd.Next(properties.Length);
+                //color = (Brush)properties[random].GetValue(null, null);
+                //return color;
+            }
+        }
     }
 }

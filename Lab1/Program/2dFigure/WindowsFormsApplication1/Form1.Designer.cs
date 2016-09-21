@@ -117,6 +117,7 @@ namespace WindowsFormsApplication1
             this.DrawPanel.Name = "DrawPanel";
             this.DrawPanel.Size = new System.Drawing.Size(522, 522);
             this.DrawPanel.TabIndex = 14;
+            this.DrawPanel.Scroll += new System.Windows.Forms.ScrollEventHandler(this.DrawPanel_Scroll);
             this.DrawPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.DrawPanel_Paint);
             // 
             // X_Lbl
@@ -291,7 +292,7 @@ namespace WindowsFormsApplication1
             this.проПрограмуToolStripMenuItem.Name = "проПрограмуToolStripMenuItem";
             this.проПрограмуToolStripMenuItem.Size = new System.Drawing.Size(99, 20);
             this.проПрограмуToolStripMenuItem.Text = "Про програму";
-            this.проПрограмуToolStripMenuItem.Click += new System.EventHandler(this.проПрограмуToolStripMenuItem_Click);
+            this.проПрограмуToolStripMenuItem.Click += new System.EventHandler(this.AboutToolStripMenuItem_Click);
             // 
             // вихідToolStripMenuItem
             // 
